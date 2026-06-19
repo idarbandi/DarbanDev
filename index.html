@@ -58,23 +58,6 @@
             margin: 0;
             font-weight: 500;
         }
-        /* استایل لوگوی گواهینامه‌ها */
-        .cert-item .cert-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #fff;
-            padding: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-bottom: 10px;
-        }
-        .cert-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
         /* استایل بخش توصیه‌نامه‌ها */
         .testimonial-header .job-title {
             font-size: 0.9rem;
@@ -92,6 +75,90 @@
             flex-grow: 1;
         }
         
+        /* استایل جدید بخش گواهینامه‌ها */
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            background: var(--bg-color-secondary, #fff);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .cert-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .cert-item .cert-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 4px;
+        }
+        .cert-details h4 {
+            margin: 0 0 4px 0;
+            font-size: 1rem;
+        }
+        .cert-details p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary, #666);
+        }
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--text-muted, #999);
+            margin-top: 4px;
+        }
+        .cert-credential {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+            width: 100%;
+        }
+        .cert-credential span {
+            font-size: 0.85rem;
+            color: var(--text-secondary, #444);
+        }
+        .cert-credential .btn-credential {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color, #ccc);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--text-primary, #000);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+        .cert-credential .btn-credential:hover {
+            background: #f0f0f0;
+        }
+        .cert-credential .btn-credential i {
+            font-size: 0.8rem;
+        }
+        .cert-image-wrapper {
+            margin-top: 15px;
+            width: 100%;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .cert-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* بهینه‌سازی کاور و هدر در حالت موبایل */
         @media (max-width: 768px) {
             .cover-banner {
@@ -109,6 +176,9 @@
             .controls {
                 margin-left: auto;
                 margin-right: 0;
+            }
+            .cert-item {
+                padding: 15px;
             }
         }
     </style>
@@ -416,69 +486,195 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
+        <!-- Certifications Section (New Enhanced Design) -->
         <section class="section certifications-section">
             <div class="section-content">
-                <h2 class="section-title" data-en="Certifications" data-fa="گواهینامه‌ها">Certifications</h2>
+                <h2 class="section-title" data-en="Certifications & Credentials" data-fa="گواهینامه‌ها و مدارک">Certifications & Credentials</h2>
                 <div class="certifications-grid">
+                    <!-- Microsoft Python -->
                     <div class="cert-item">
-                        <img src="images/amazon_web_services_logo.jpeg" alt="AWS" class="cert-logo">
-                        <h4>AWS Cloud Practitioner</h4>
-                        <p data-en="Amazon Web Services" data-fa="سرویس‌های ابری آمازون">Amazon Web Services</p>
-                        <span class="cert-date" data-en="May 2024" data-fa="می 2024">May 2024</span>
+                        <div class="cert-header">
+                            <img src="images/microsoft_logo.jpeg" alt="Microsoft" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Python Programming Fundamentals" data-fa="مبانی برنامه‌نویسی پایتون">Python Programming Fundamentals</h4>
+                                <p>Microsoft</p>
+                                <div class="cert-date" data-en="Issued Jun 2026" data-fa="اعطا شده ژوئن 2026">Issued Jun 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: ZNL8W9ABZP2N" data-fa="شناسه مدرک: ZNL8W9ABZP2N">Credential ID: ZNL8W9ABZP2N</span>
+                            <a href="https://www.coursera.org/verify/ZNL8W9ABZP2N" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
+                        </div>
                     </div>
+
+                    <!-- Meta Backend -->
                     <div class="cert-item">
-                        <img src="images/7learn_logo.jpeg" alt="7Learn" class="cert-logo">
-                        <h4>Golang Expert</h4>
-                        <p>7Learn</p>
-                        <span class="cert-date" data-en="May 2022" data-fa="می 2022">May 2022</span>
+                        <div class="cert-header">
+                            <img src="images/meta_logo.jpeg" alt="Meta" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Introduction To The Meta Backend Development" data-fa="مقدمه ای بر توسعه بک‌اند متا">Introduction To The Meta Backend Development</h4>
+                                <p>Meta</p>
+                                <div class="cert-date" data-en="Issued Apr 2026" data-fa="اعطا شده آوریل 2026">Issued Apr 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: HD5DWN7ZPZMA" data-fa="شناسه مدرک: HD5DWN7ZPZMA">Credential ID: HD5DWN7ZPZMA</span>
+                            <a href="https://www.coursera.org/verify/HD5DWN7ZPZMA" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/meta_certificate.jpeg" alt="Meta Backend Certificate">
+                        </div>
                     </div>
+
+                    <!-- IBM Backend -->
                     <div class="cert-item">
-                        <img src="images/ibm_logo.jpeg" alt="IBM" class="cert-logo">
-                        <h4>IBM Backend Developer</h4>
-                        <p>IBM</p>
-                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
+                        <div class="cert-header">
+                            <img src="images/ibm_logo.jpeg" alt="IBM" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="IBM Backend Developer" data-fa="توسعه‌دهنده بک‌اند آی‌بی‌ام">IBM Backend Developer</h4>
+                                <p>IBM</p>
+                                <div class="cert-date" data-en="Issued Jun 2026" data-fa="اعطا شده ژوئن 2026">Issued Jun 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: 9cbdf059082f" data-fa="شناسه مدرک: 9cbdf059082f">Credential ID: 9cbdf059082f</span>
+                            <a href="https://www.coursera.org/verify/9cbdf059082f" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
+                        </div>
                     </div>
+
+                    <!-- Google Python -->
                     <div class="cert-item">
-                        <img src="images/meta_logo.jpeg" alt="Meta" class="cert-logo">
-                        <h4>Meta Backend Development</h4>
-                        <p>Meta</p>
-                        <span class="cert-date" data-en="Apr 2026" data-fa="آوریل 2026">Apr 2026</span>
+                        <div class="cert-header">
+                            <img src="images/google_logo.jpeg" alt="Google" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Crash Course On Python" data-fa="دوره فشرده پایتون">Crash Course On Python</h4>
+                                <p>Google</p>
+                                <div class="cert-date" data-en="Issued May 2026" data-fa="اعطا شده می 2026">Issued May 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: ZIN7KNPZIQFW" data-fa="شناسه مدرک: ZIN7KNPZIQFW">Credential ID: ZIN7KNPZIQFW</span>
+                            <a href="https://www.coursera.org/verify/ZIN7KNPZIQFW" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/Google_certificate.jpeg" alt="Google Python Certificate">
+                        </div>
                     </div>
+
+                    <!-- AWS Cloud Practitioner -->
                     <div class="cert-item">
-                        <img src="images/microsoft_logo.jpeg" alt="Microsoft" class="cert-logo">
-                        <h4>Python Programming</h4>
-                        <p>Microsoft</p>
-                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
+                        <div class="cert-header">
+                            <img src="images/amazon_web_services_logo.jpeg" alt="AWS" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="AWS Cloud Practitioner" data-fa="AWS Cloud Practitioner">AWS Cloud Practitioner</h4>
+                                <p data-en="Amazon Web Services" data-fa="سرویس‌های ابری آمازون">Amazon Web Services</p>
+                                <div class="cert-date" data-en="Issued May 2024" data-fa="اعطا شده می 2024">Issued May 2024</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: ABCD1234EFGH" data-fa="شناسه مدرک: ABCD1234EFGH">Credential ID: ABCD1234EFGH</span>
+                            <a href="https://www.coursera.org/verify/ABCD1234EFGH" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/Amazon_web_services_certificate.jpeg" alt="AWS Cloud Practitioner Certificate">
+                        </div>
                     </div>
+
+                    <!-- Golang Expert 7Learn -->
                     <div class="cert-item">
-                        <img src="images/faradars_logo.jpeg" alt="FaraDars" class="cert-logo">
-                        <h4>LPIC-1 Preparations</h4>
-                        <p>FaraDars</p>
-                        <span class="cert-date" data-en="Jan 2026" data-fa="ژانویه 2026">Jan 2026</span>
+                        <div class="cert-header">
+                            <img src="images/7learn_logo.jpeg" alt="7Learn" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Golang Expert" data-fa="متخصص گولنگ">Golang Expert</h4>
+                                <p>7Learn</p>
+                                <div class="cert-date" data-en="Issued May 2022" data-fa="اعطا شده می 2022">Issued May 2022</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: mArKo93Cpi" data-fa="شناسه مدرک: mArKo93Cpi">Credential ID: mArKo93Cpi</span>
+                            <a href="https://7learn.com/cert/mArKo93Cpi" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/7learn_certificate.jpeg" alt="7Learn Golang Certificate">
+                        </div>
                     </div>
+
+                    <!-- FaraDars LPIC -->
                     <div class="cert-item">
-                        <img src="images/hamrah_academy_logo.jpeg" alt="Hamrah Academy" class="cert-logo">
-                        <h4>Grafana</h4>
-                        <p>Hamrah Academy</p>
-                        <span class="cert-date" data-en="May 2026" data-fa="می 2026">May 2026</span>
+                        <div class="cert-header">
+                            <img src="images/faradars_logo.jpeg" alt="FaraDars" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="LPIC-1 Preparations" data-fa="مقدمات LPIC-1">LPIC-1 Preparations</h4>
+                                <p>FaraDars</p>
+                                <div class="cert-date" data-en="Issued Jan 2026" data-fa="اعطا شده ژانویه 2026">Issued Jan 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: 0CCA9097" data-fa="شناسه مدرک: 0CCA9097">Credential ID: 0CCA9097</span>
+                            <a href="https://faradars.org/verify/0CCA9097" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/faradars_certificate.jpeg" alt="FaraDars LPIC Certificate">
+                        </div>
                     </div>
+
+                    <!-- Hamrah Academy Grafana -->
                     <div class="cert-item">
-                        <img src="images/google_logo.jpeg" alt="Google" class="cert-logo">
-                        <h4>Crash Course On Python</h4>
-                        <p>Google</p>
-                        <span class="cert-date" data-en="May 2026" data-fa="می 2026">May 2026</span>
+                        <div class="cert-header">
+                            <img src="images/hamrah_academy_logo.jpeg" alt="Hamrah Academy" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Grafana" data-fa="گرافانا">Grafana</h4>
+                                <p>Hamrah Academy</p>
+                                <div class="cert-date" data-en="Issued May 2026" data-fa="اعطا شده می 2026">Issued May 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: E5JRY5NYN6VZ" data-fa="شناسه مدرک: E5JRY5NYN6VZ">Credential ID: E5JRY5NYN6VZ</span>
+                            <a href="https://hanrahacademy.ir/verify/E5JRY5NYN6VZ" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/hamrahAcademy_certificates.jpeg" alt="Hamrah Academy Grafana Certificate">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section (All 6 Individuals from JobVision) -->
+        <!-- Testimonials Section -->
         <section class="section testimonials-section">
             <div class="section-content">
                 <h2 class="section-title" data-en="Recommendations" data-fa="توصیه‌نامه‌ها">Recommendations</h2>
                 <div class="testimonials-grid">
-                    
                     <!-- 1. Saeed Abutalebi -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
