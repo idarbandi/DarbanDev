@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Darbandi - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header & Navigation -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-text">DarbanDev</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#about" data-en="About" data-fa="درباره‌ی من">About</a></li>
+                        <li><a href="#experience" data-en="Experience" data-fa="تجربه">Experience</a></li>
+                        <li><a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a></li>
+                        <li><a href="#skills" data-en="Skills" data-fa="مهارت‌ها">Skills</a></li>
+                        <li><a href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="controls">
+                    <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+                        <span id="langText">فارسی</span>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-avatar">
+                    <div class="avatar-circle">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر (DarbanDev) داربندی">Amir (DarbanDev) Darbandi</h1>
+                <p class="hero-subtitle" data-en="Software Engineer | Backend Developer | Fintech Specialist" data-fa="مهندس نرم‌افزار | توسعه‌دهنده بک‌اند | متخصص فین‌تک">Software Engineer | Backend Developer | Fintech Specialist</p>
+                <p class="hero-description" data-en="Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning." data-fa="ساخت سیستم‌های بک‌اند محکم و مقیاس‌پذیر با Python و Go. علاقه‌مند به میکروسرویس‌ها، معماری سیستم و یادگیری مستمر.">Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary" data-en="Get In Touch" data-fa="تماس بگیری">Get In Touch</a>
+                    <a href="https://github.com/idarbandi" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        <span data-en="GitHub" data-fa="گیت‌هاب">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="About Me" data-fa="درباره‌ی من">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-en="I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms." data-fa="من یک مهندس نرم‌افزار متعهد هستم که 3+ سال تجربه در ساخت سیستم‌های قابل‌اعتماد و عملکرد بالا دارم. تخصص من در توسعه بک‌اند با Python و Go شامل طراحی و پیاده‌سازی معماری سیستم و میکروسرویس‌ها برای پلتفرم‌های مالی است.">I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms.</p>
+                        <p data-en="Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills." data-fa="در حال حاضر در بانک رفاه کارگران، من سیستم‌های هسته‌ای برای بانکداری دیجیتال و راه‌حل‌های فین‌تک می‌سازم. کار در این فضا به این معنی است که همه چیز باید ایمن، سریع و بسیار در دسترس باشد—که مرا برای بهبود مستمر توانایی‌های طراحی معماری و بهینه‌سازی می‌رانند.">Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 data-en="3+" data-fa="۳+">3+</h3>
+                            <p data-en="Years of Experience" data-fa="سال تجربه">Years of Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-en="15+" data-fa="۱۵+">15+</h3>
+                            <p data-en="Projects Completed" data-fa="پروژه تکمیل شده">Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 data-en="500+" data-fa="۵۰۰+">500+</h3>
+                            <p data-en="LinkedIn Connections" data-fa="اتصالات LinkedIn">LinkedIn Connections</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="Work Experience" data-fa="تجربه کاری">Work Experience</h2>
+                <div class="experience-timeline">
+                    <!-- Job 1 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="Migration & Microservices Engineer" data-fa="مهندس مهاجرت و میکروسرویس‌ها">Migration & Microservices Engineer</h3>
+                            <span class="date" data-en="May 2026 - Present" data-fa="می 2026 - کنون">May 2026 - Present</span>
+                        </div>
+                        <p class="company" data-en="Bank Refah Kargaran - Payment Switch Department" data-fa="بانک رفاه کارگران - دپارتمان سوئیچ پرداخت">Bank Refah Kargaran - Payment Switch Department</p>
+                        <ul class="experience-list">
+                            <li data-en="API & Protocol Gateway Development" data-fa="توسعه API و Gateway پروتکل">API & Protocol Gateway Development</li>
+                            <li data-en="Message Format Standardization (ISO 8583, ISO 20022)" data-fa="استانداردسازی فرمت‌های پیام (ISO 8583, ISO 20022)">Message Format Standardization (ISO 8583, ISO 20022)</li>
+                            <li data-en="Microservice Architecture Implementation" data-fa="پیاده‌سازی معماری میکروسرویس">Microservice Architecture Implementation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="Backend Developer" data-fa="توسعه‌دهنده بک‌اند">Backend Developer</h3>
+                            <span class="date" data-en="Nov 2025 - Mar 2026" data-fa="نوامبر 2025 - مارس 2026">Nov 2025 - Mar 2026</span>
+                        </div>
+                        <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="ملل تجارت الکترونیک و فناوری اطلاعات">Melal E-Commerce and IT (FAM)</p>
+                        <ul class="experience-list">
+                            <li data-en="Banking Infrastructure Development" data-fa="توسعه زیرساخت بانکداری">Banking Infrastructure Development</li>
+                            <li data-en="Oracle Database Management" data-fa="مدیریت پایگاه داده Oracle">Oracle Database Management</li>
+                            <li data-en="Shaparak Services & Mobile Banking" data-fa="سرویس‌های شاپرک و بانکداری موبایل">Shaparak Services & Mobile Banking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="Backend Lead / FastAPI" data-fa="رهبر بک‌اند / FastAPI">Backend Lead / FastAPI</h3>
+                            <span class="date" data-en="Sep 2025 - Mar 2026" data-fa="سپتامبر 2025 - مارس 2026">Sep 2025 - Mar 2026</span>
+                        </div>
+                        <p class="company" data-en="Persian Greyhound Startup (Remote)" data-fa="استارتاپ پرشین گرهاند (راه دور)">Persian Greyhound Startup (Remote)</p>
+                        <ul class="experience-list">
+                            <li data-en="Frontend & Infrastructure Collaboration" data-fa="همکاری با تیم فرانت‌اند و زیرساخت">Frontend & Infrastructure Collaboration</li>
+                            <li data-en="AI Prompt Engineering & Optimization" data-fa="مهندسی و بهینه‌سازی Prompt هوش مصنوعی">AI Prompt Engineering & Optimization</li>
+                            <li data-en="Unit Test Framework & CI/CD Pipeline" data-fa="فریم‌ورک تست واحد و Pipeline CI/CD">Unit Test Framework & CI/CD Pipeline</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 data-en="Full-stack Developer" data-fa="توسعه‌دهنده Full-Stack">Full-stack Developer</h3>
+                            <span class="date" data-en="Sep 2024 - Aug 2025" data-fa="سپتامبر 2024 - آگوست 2025">Sep 2024 - Aug 2025</span>
+                        </div>
+                        <p class="company" data-en="Homayoun Paper & Cardboard Industries" data-fa="صنایع کاغذ و مقوا همایون">Homayoun Paper & Cardboard Industries</p>
+                        <ul class="experience-list">
+                            <li data-en="R&D Projects & Automation" data-fa="پروژه‌های تحقیق و توسعه و اتوماسیون">R&D Projects & Automation</li>
+                            <li data-en="AI Detection Systems & Embedded Hardware" data-fa="سیستم‌های تشخیص هوش مصنوعی و سخت‌افزار تعبیه‌شده">AI Detection Systems & Embedded Hardware</li>
+                            <li data-en="Django & Vue.js Development" data-fa="توسعه Django و Vue.js">Django & Vue.js Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="Skills & Technologies" data-fa="مهارت‌ها و تکنولوژی‌ها">Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 data-en="Backend" data-fa="بک‌اند">Backend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Go</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">DRF</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 data-en="Frontend" data-fa="فرانت‌اند">Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 data-en="Architecture" data-fa="معماری">Architecture</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 data-en="Databases" data-fa="پایگاه‌داده‌ها">Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Oracle</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 data-en="DevOps" data-fa="DevOps">DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 data-en="Other" data-fa="سایر">Other</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Unit Testing</span>
+                            <span class="skill-tag">Fintech</span>
+                            <span class="skill-tag">E-Commerce</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="Featured Projects" data-fa="پروژه‌های برجسته">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 data-en="Dokoon - NextJS & GraphQL" data-fa="Dokoon - NextJS و GraphQL">Dokoon - NextJS & GraphQL</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/idarbandi" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-period" data-en="Sep 2024 - Jan 2025" data-fa="سپتامبر 2024 - ژانویه 2025">Sep 2024 - Jan 2025</p>
+                        <p class="project-description" data-en="Evolution of Dokoon from DRF to GraphQL with focus on core queries and Http-Only authentication." data-fa="تکامل Dokoon از DRF به GraphQL با تمرکز بر کوئری‌های اصلی و احراز هویت Http-Only.">Evolution of Dokoon from DRF to GraphQL with focus on core queries and Http-Only authentication.</p>
+                        <div class="project-tags">
+                            <span>NextJS</span>
+                            <span>GraphQL</span>
+                            <span>Authentication</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 data-en="Dokoon - E-Commerce" data-fa="Dokoon - فروشگاه الکترونیک">Dokoon - E-Commerce</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/idarbandi" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-period" data-en="Nov 2021 - Feb 2022" data-fa="نوامبر 2021 - فوریه 2022">Nov 2021 - Feb 2022</p>
+                        <p class="project-description" data-en="A simple e-commerce platform using Django backend and Vue.js frontend with full product management and cart functionality." data-fa="یک فروشگاه الکترونیک ساده با Django برای بک‌اند و Vue.js برای فرانت‌اند با مدیریت کامل محصول و عملکرد سبد خرید.">A simple e-commerce platform using Django backend and Vue.js frontend with full product management and cart functionality.</p>
+                        <div class="project-tags">
+                            <span>Django</span>
+                            <span>Vue.js</span>
+                            <span>E-Commerce</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 data-en="Maktab - Educational App" data-fa="Maktab - اپلیکیشن آموزشی">Maktab - Educational App</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/idarbandi" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-period" data-en="Jan 2025 - Feb 2025" data-fa="ژانویه 2025 - فوریه 2025">Jan 2025 - Feb 2025</p>
+                        <p class="project-description" data-en="Educational web application using Django and Vue.js with course management, student enrollment, and progress tracking." data-fa="اپلیکیشن وب آموزشی با Django و Vue.js شامل مدیریت دوره‌ها، نام‌نویسی دانشجویان و ردیابی پیشرفت.">Educational web application using Django and Vue.js with course management, student enrollment, and progress tracking.</p>
+                        <div class="project-tags">
+                            <span>Django</span>
+                            <span>Vue.js</span>
+                            <span>Education</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 data-en="VITE Docs Translation" data-fa="ترجمه مستندات VITE">VITE Docs Translation</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/vitejs/docs-fa" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-period" data-en="Dec 2024 - Mar 2025" data-fa="دسامبر 2024 - مارس 2025">Dec 2024 - Mar 2025</p>
+                        <p class="project-description" data-en="Open-source contribution: Persian translation of VITE framework documentation. Community-driven localization project." data-fa="مشارکت متن‌باز: ترجمه فارسی مستندات فریم‌ورک VITE. پروژه محلی‌سازی مجتمع‌محور.">Open-source contribution: Persian translation of VITE framework documentation. Community-driven localization project.</p>
+                        <div class="project-tags">
+                            <span>Open Source</span>
+                            <span>Translation</span>
+                            <span>VITE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section certifications-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="Certifications" data-fa="گواهینامه‌ها">Certifications</h2>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>AWS Cloud Practitioner</h4>
+                        <p data-en="Amazon Web Services" data-fa="سرویس‌های ابری آمازون">Amazon Web Services</p>
+                        <span class="cert-date" data-en="May 2024" data-fa="می 2024">May 2024</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Golang Expert</h4>
+                        <p>7Learn</p>
+                        <span class="cert-date" data-en="May 2022" data-fa="می 2022">May 2022</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>IBM Backend Developer</h4>
+                        <p>IBM</p>
+                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Meta Backend Development</h4>
+                        <p>Meta</p>
+                        <span class="cert-date" data-en="Apr 2026" data-fa="آوریل 2026">Apr 2026</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Python Programming</h4>
+                        <p>Microsoft</p>
+                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>LPIC-1 Preparations</h4>
+                        <p>FaraDars</p>
+                        <span class="cert-date" data-en="Jan 2026" data-fa="ژانویه 2026">Jan 2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="What Others Say" data-fa="نظر دیگران">What Others Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4>Mehdi Dehghani</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-en="I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member." data-fa="من از همکاری با او لذت بردم و با اطمینان می‌توانم بگویم که او یک متخصص فوق‌العاده است. فراتر از توانایی‌های فنی‌اش، او یک همکار بسیار مهربان، انعطاف‌پذیر و قابل‌اعتماد است.">I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4>Morteza Karimi</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-en="I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills." data-fa="من با امیر داربندی کار کردم و او را یک توسعه‌دهنده بک‌اند بسیار توانمند و قابل‌اعتماد یافتم. او یک ذهنیت قوی حل‌مسئله دارد و همیشه مایل است توانایی‌های خود را بهبود بخشد.">I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4>Masoud Shahrian</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-en="I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability." data-fa="من خوشحالم که امیر داربندی را به عنوان یک Full Stack Developer بسیار مهارت‌مند توصیه کنم. من با اطمینان می‌توانم تخصص فنی فوق‌العاده، حرفه‌گرایی و قابل‌اعتماد بودن او را تأیید کنم.">I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-content">
+                <h2 class="section-title" data-en="Get In Touch" data-fa="تماس بگیری">Get In Touch</h2>
+                <div class="contact-content">
+                    <p data-en="I'm always interested in hearing about new projects and opportunities. Feel free to reach out!" data-fa="من همیشه علاقه‌مند به شنیدن پروژه‌های جدید و فرصت‌ها هستم. می‌توانی آزادانه تماس بگیری!">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="https://linkedin.com" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/idarbandi" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:amir@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span data-en="Email" data-fa="ایمیل">Email</span>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="contact-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p data-en="&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS" data-fa="&copy; 1405 امیر داربندی. تمام حقوق محفوظ است. | ساخته شده با ❤️ و HTML/CSS/JS خالص">&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
