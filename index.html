@@ -6,11 +6,100 @@
     <title>Amir Darbandi - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های جدید برای اعمال تصاویر */
+        .cover-banner {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: -100px;
+        }
+        .cover-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* تنظیم آواتار */
+        .hero-avatar .avatar-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--bg-color-secondary, #ffffff);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .hero-avatar .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* استایل لوگوی شرکت‌ها در تجربه کاری */
+        .experience-item .company-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .experience-item .company-wrapper .company-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 4px;
+            background: #fff;
+        }
+        .experience-item .company-wrapper .company {
+            margin: 0;
+            font-weight: 500;
+        }
+        /* استایل لوگوی گواهینامه‌ها */
+        .cert-item .cert-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+        }
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        /* استایل بخش توصیه‌نامه‌ها */
+        .testimonial-header .job-title {
+            font-size: 0.9rem;
+            color: var(--text-secondary, #666);
+            margin-top: 4px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .testimonial-card p {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- Header & Navigation -->
         <header class="header">
+            <!-- بنر کاور -->
+            <div class="cover-banner">
+                <img src="images/cover.jpeg" alt="Amir Darbandi Cover">
+            </div>
             <div class="header-content">
                 <div class="logo">
                     <span class="logo-text">DarbanDev</span>
@@ -40,7 +129,8 @@
             <div class="hero-content">
                 <div class="hero-avatar">
                     <div class="avatar-circle">
-                        <i class="fas fa-code"></i>
+                        <!-- آواتار پروفایل -->
+                        <img src="images/orofile.jpg" alt="Amir Darbandi Profile">
                     </div>
                 </div>
                 <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر (DarbanDev) داربندی">Amir (DarbanDev) Darbandi</h1>
@@ -94,7 +184,10 @@
                             <h3 data-en="Migration & Microservices Engineer" data-fa="مهندس مهاجرت و میکروسرویس‌ها">Migration & Microservices Engineer</h3>
                             <span class="date" data-en="May 2026 - Present" data-fa="می 2026 - کنون">May 2026 - Present</span>
                         </div>
-                        <p class="company" data-en="Bank Refah Kargaran - Payment Switch Department" data-fa="بانک رفاه کارگران - دپارتمان سوئیچ پرداخت">Bank Refah Kargaran - Payment Switch Department</p>
+                        <div class="company-wrapper">
+                            <img src="images/bankrefahkargaran_logo.jpeg" alt="Bank Refah Kargaran" class="company-logo">
+                            <p class="company" data-en="Bank Refah Kargaran - Payment Switch Department" data-fa="بانک رفاه کارگران - دپارتمان سوئیچ پرداخت">Bank Refah Kargaran - Payment Switch Department</p>
+                        </div>
                         <ul class="experience-list">
                             <li data-en="API & Protocol Gateway Development" data-fa="توسعه API و Gateway پروتکل">API & Protocol Gateway Development</li>
                             <li data-en="Message Format Standardization (ISO 8583, ISO 20022)" data-fa="استانداردسازی فرمت‌های پیام (ISO 8583, ISO 20022)">Message Format Standardization (ISO 8583, ISO 20022)</li>
@@ -108,7 +201,10 @@
                             <h3 data-en="Backend Developer" data-fa="توسعه‌دهنده بک‌اند">Backend Developer</h3>
                             <span class="date" data-en="Nov 2025 - Mar 2026" data-fa="نوامبر 2025 - مارس 2026">Nov 2025 - Mar 2026</span>
                         </div>
-                        <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="ملل تجارت الکترونیک و فناوری اطلاعات">Melal E-Commerce and IT (FAM)</p>
+                        <div class="company-wrapper">
+                            <img src="images/fam724_logo.jpeg" alt="Melal E-Commerce and IT (FAM)" class="company-logo">
+                            <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="ملل تجارت الکترونیک و فناوری اطلاعات">Melal E-Commerce and IT (FAM)</p>
+                        </div>
                         <ul class="experience-list">
                             <li data-en="Banking Infrastructure Development" data-fa="توسعه زیرساخت بانکداری">Banking Infrastructure Development</li>
                             <li data-en="Oracle Database Management" data-fa="مدیریت پایگاه داده Oracle">Oracle Database Management</li>
@@ -305,89 +401,90 @@
                 <h2 class="section-title" data-en="Certifications" data-fa="گواهینامه‌ها">Certifications</h2>
                 <div class="certifications-grid">
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/amazon_web_services_logo.jpeg" alt="AWS" class="cert-logo">
                         <h4>AWS Cloud Practitioner</h4>
                         <p data-en="Amazon Web Services" data-fa="سرویس‌های ابری آمازون">Amazon Web Services</p>
                         <span class="cert-date" data-en="May 2024" data-fa="می 2024">May 2024</span>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/7learn_logo.jpeg" alt="7Learn" class="cert-logo">
                         <h4>Golang Expert</h4>
                         <p>7Learn</p>
                         <span class="cert-date" data-en="May 2022" data-fa="می 2022">May 2022</span>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/ibm_logo.jpeg" alt="IBM" class="cert-logo">
                         <h4>IBM Backend Developer</h4>
                         <p>IBM</p>
                         <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/meta_logo.jpeg" alt="Meta" class="cert-logo">
                         <h4>Meta Backend Development</h4>
                         <p>Meta</p>
                         <span class="cert-date" data-en="Apr 2026" data-fa="آوریل 2026">Apr 2026</span>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/microsoft_logo.jpeg" alt="Microsoft" class="cert-logo">
                         <h4>Python Programming</h4>
                         <p>Microsoft</p>
                         <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
+                        <img src="images/faradars_logo.jpeg" alt="FaraDars" class="cert-logo">
                         <h4>LPIC-1 Preparations</h4>
                         <p>FaraDars</p>
                         <span class="cert-date" data-en="Jan 2026" data-fa="ژانویه 2026">Jan 2026</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/hamrah_academy_logo.jpeg" alt="Hamrah Academy" class="cert-logo">
+                        <h4>Grafana</h4>
+                        <p>Hamrah Academy</p>
+                        <span class="cert-date" data-en="May 2026" data-fa="می 2026">May 2026</span>
+                    </div>
+                    <div class="cert-item">
+                        <img src="images/google_logo.jpeg" alt="Google" class="cert-logo">
+                        <h4>Crash Course On Python</h4>
+                        <p>Google</p>
+                        <span class="cert-date" data-en="May 2026" data-fa="می 2026">May 2026</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section (Recommendations from JobVision) -->
         <section class="section testimonials-section">
             <div class="section-content">
-                <h2 class="section-title" data-en="What Others Say" data-fa="نظر دیگران">What Others Say</h2>
+                <h2 class="section-title" data-en="Recommendations" data-fa="توصیه‌نامه‌ها">Recommendations</h2>
                 <div class="testimonials-grid">
+                    
+                    <!-- Recommendation 1: Saeed Abutalebi -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Mehdi Dehghani</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Saeed Abutalebi" data-fa="سعید ابوطالبی">Saeed Abutalebi</h4>
+                            <p class="job-title" data-en="Switch Developer" data-fa="توسعه‌دهنده سوئیچ">Switch Developer</p>
                         </div>
-                        <p data-en="I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member." data-fa="من از همکاری با او لذت بردم و با اطمینان می‌توانم بگویم که او یک متخصص فوق‌العاده است. فراتر از توانایی‌های فنی‌اش، او یک همکار بسیار مهربان، انعطاف‌پذیر و قابل‌اعتماد است.">I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member.</p>
+                        <p data-en="Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention." data-fa="امیرحسین دربندی برنامه‌نویس قوی با رویکرد مهندسی نرم‌افزار هستش که تا جایی که من می‌دیدم دائماً در حال مطالعه مستندات و تکنولوژی‌های روز بود و سعی داشت به هیچ وجه از پیشرفت‌های تکنولوژی‌های روز عقب نباشد. ما چند سرویس به همراه همدیگه توسعه دادیم. در مدتی که افتخار همکاری با ایشان را داشتم، مهارت و تعهد کاری را به وضوح در ایشان مشاهده کردم. تسلط به فریم‌ورک‌ها و زبان‌های برنامه‌نویسی، مطالعه و به‌روز بودن، استفاده درست و به‌جا از اصول برنامه‌نویسی از جمله clean code و مهارت‌های ایشان است. در کنار مواردی که ذکر کردم لازم است به تمرکز بالای ایشان در کار اشاره کنم، مسئله‌ای که برای یک برنامه‌نویس مزیت ویژه‌ای است. اگر تخصص و تعهد کاری ملاک شماست، ایشان شایسته‌ترین گزینه هستند. بنده سابقه همکاری با ایشان در فناوری اطلاعات ملل (فام) را داشته‌ام. ایشان بسیار منظم و آراسته و با دانش در زمینه برنامه‌نویسی پایتون، کار با لینوکس و همچنین دانش بسیار والا در زمینه شبکه‌های کامپیوتری می‌باشد. وجود چنین فردی در هر سازمانی منجر به ترقی و بالا رفتن سطح فنی سازمان می‌باشد. متعهد بودن و وظیفه‌شناسی و تعهد به آماده کردن تسک‌ها سر ددلاین از ویژگی‌های مهندس دربندی بود که من باید ذکر کنم.">Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention.</p>
                     </div>
+
+                    <!-- Recommendation 2: Mehdi Dehghani -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Morteza Karimi</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Mehdi Dehghani" data-fa="مهندس مهدی دهقانی">Mehdi Dehghani</h4>
+                            <p class="job-title" data-en="Android Developer at FAM & Metabank Apps" data-fa="برنامه‌نویس اندروید اپلیکیشن‌های فام و متابانک">Android Developer at FAM & Metabank Apps</p>
                         </div>
-                        <p data-en="I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills." data-fa="من با امیر داربندی کار کردم و او را یک توسعه‌دهنده بک‌اند بسیار توانمند و قابل‌اعتماد یافتم. او یک ذهنیت قوی حل‌مسئله دارد و همیشه مایل است توانایی‌های خود را بهبود بخشد.">I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills.</p>
+                        <p data-en="At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity." data-fa="در شرکت فام ایشون برنامه‌نویس بک‌اند و من هم برنامه‌نویس اندروید بودیم. هر دومون روی پروژه نئوبانک موسسه اعتباری ملل کار می‌کردیم و کلی فیچرهای جدید رو با همدیگه توسعه دادیم توی پروژه مثل پرداخت قبوض، خرید شارژ و خرید بسته، نوتیفیکیشن‌ها، قسمت‌هایی از تسهیلات و بیشتر قسمت‌های افتتاح حساب. برای رساندن تسک‌های پروژه در زمان مقرر واقعاً متعهد و پیگیر بودن. در مجموع ایشون در محیط کار واقعاً متعهد، منظم، خوش‌اخلاق، رازدارترین و یکی از بی‌حاشیه همکارها بودن. برایشان آرزوی موفقیت و بهروزی دارم.">At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity.</p>
                     </div>
+
+                    <!-- Recommendation 3: Masoud Shahrian -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Masoud Shahrian</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Dr. Masoud Shahrian" data-fa="دکتر مسعود شهریان">Dr. Masoud Shahrian</h4>
+                            <p class="job-title" data-en="PhD in AI & Large Language Model Specialist" data-fa="دکترای هوش مصنوعی و کارشناس مدل‌های زبانی بزرگ">PhD in AI & Large Language Model Specialist</p>
                         </div>
-                        <p data-en="I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability." data-fa="من خوشحالم که امیر داربندی را به عنوان یک Full Stack Developer بسیار مهارت‌مند توصیه کنم. من با اطمینان می‌توانم تخصص فنی فوق‌العاده، حرفه‌گرایی و قابل‌اعتماد بودن او را تأیید کنم.">I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability.</p>
+                        <p data-en="Dear Engineer Darbandi is a young, energetic, responsible, professional, hardworking, and diligent person in carrying out assigned tasks. He has deep knowledge in his field and is very organized and presentable in the work environment, and is very meticulous and detail-oriented regarding project performance and progress. Getting to know and collaborating with him will be valuable for any group or company." data-fa="آقای مهندس دربندی عزیز جوان، پر انرژی، مسئولیت‌پذیر، حرفه‌ای، کاردان و ساعی در انجام امور محوله می‌باشند. دارای دانشی عمیق در حیطه کاری و هم‌چنین بسیار منظم و موجه در محیط کار حاضر شده و نسبت به عملکرد و پیشرفت پروژه بسیار ریزبین و نکته‌سنج می‌باشند. آشنایی و همکاری با ایشان برای هر گروه و شرکتی ذی‌قیمت خواهد بود.">Dear Engineer Darbandi is a young, energetic, responsible, professional, hardworking, and diligent person in carrying out assigned tasks. He has deep knowledge in his field and is very organized and presentable in the work environment, and is very meticulous and detail-oriented regarding project performance and progress. Getting to know and collaborating with him will be valuable for any group or company.</p>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -407,13 +504,9 @@
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="mailto:amir@example.com" class="contact-link">
+                        <a href="mailto:darbandidr99@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span data-en="Email" data-fa="ایمیل">Email</span>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" class="contact-link">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
                         </a>
                     </div>
                 </div>
