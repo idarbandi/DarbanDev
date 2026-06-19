@@ -14,6 +14,7 @@
             overflow: hidden;
             position: relative;
             margin-bottom: -100px;
+            z-index: 1;
         }
         .cover-banner img {
             width: 100%;
@@ -89,6 +90,26 @@
         }
         .testimonial-card p {
             flex-grow: 1;
+        }
+        
+        /* بهینه‌سازی کاور و هدر در حالت موبایل */
+        @media (max-width: 768px) {
+            .cover-banner {
+                height: 140px;
+                margin-bottom: -65px;
+            }
+            .hero-avatar .avatar-circle {
+                width: 120px;
+                height: 120px;
+            }
+            .header-content {
+                flex-wrap: wrap;
+                padding: 10px 15px;
+            }
+            .controls {
+                margin-left: auto;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
@@ -452,13 +473,13 @@
             </div>
         </section>
 
-        <!-- Testimonials Section (Recommendations from JobVision) -->
+        <!-- Testimonials Section (All 6 Individuals from JobVision) -->
         <section class="section testimonials-section">
             <div class="section-content">
                 <h2 class="section-title" data-en="Recommendations" data-fa="توصیه‌نامه‌ها">Recommendations</h2>
                 <div class="testimonials-grid">
                     
-                    <!-- Recommendation 1: Saeed Abutalebi -->
+                    <!-- 1. Saeed Abutalebi -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <h4 data-en="Saeed Abutalebi" data-fa="سعید ابوطالبی">Saeed Abutalebi</h4>
@@ -467,7 +488,34 @@
                         <p data-en="Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention." data-fa="امیرحسین دربندی برنامه‌نویس قوی با رویکرد مهندسی نرم‌افزار هستش که تا جایی که من می‌دیدم دائماً در حال مطالعه مستندات و تکنولوژی‌های روز بود و سعی داشت به هیچ وجه از پیشرفت‌های تکنولوژی‌های روز عقب نباشد. ما چند سرویس به همراه همدیگه توسعه دادیم. در مدتی که افتخار همکاری با ایشان را داشتم، مهارت و تعهد کاری را به وضوح در ایشان مشاهده کردم. تسلط به فریم‌ورک‌ها و زبان‌های برنامه‌نویسی، مطالعه و به‌روز بودن، استفاده درست و به‌جا از اصول برنامه‌نویسی از جمله clean code و مهارت‌های ایشان است. در کنار مواردی که ذکر کردم لازم است به تمرکز بالای ایشان در کار اشاره کنم، مسئله‌ای که برای یک برنامه‌نویس مزیت ویژه‌ای است. اگر تخصص و تعهد کاری ملاک شماست، ایشان شایسته‌ترین گزینه هستند. بنده سابقه همکاری با ایشان در فناوری اطلاعات ملل (فام) را داشته‌ام. ایشان بسیار منظم و آراسته و با دانش در زمینه برنامه‌نویسی پایتون، کار با لینوکس و همچنین دانش بسیار والا در زمینه شبکه‌های کامپیوتری می‌باشد. وجود چنین فردی در هر سازمانی منجر به ترقی و بالا رفتن سطح فنی سازمان می‌باشد. متعهد بودن و وظیفه‌شناسی و تعهد به آماده کردن تسک‌ها سر ددلاین از ویژگی‌های مهندس دربندی بود که من باید ذکر کنم.">Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention.</p>
                     </div>
 
-                    <!-- Recommendation 2: Mehdi Dehghani -->
+                    <!-- 2. Amirhossein Shokr -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Amirhossein Shokr" data-fa="مهندس امیرحسین شکر">Amirhossein Shokr</h4>
+                            <p class="job-title" data-en="Senior Web Developer & Frontend Lead" data-fa="برنامه‌نویس ارشد وب و لید فرانت‌اند">Senior Web Developer & Frontend Lead</p>
+                        </div>
+                        <p data-en="Collaborating with Amirhossein Darbandi was a very professional experience. He has a high commitment to code quality and team management, ensuring that all tasks are executed precisely and on time. His mastery of software architecture and clean code principles greatly contributes to the success of any project." data-fa="همکاری با امیرحسین دربندی تجربه‌ای بسیار حرفه‌ای بود. ایشان تعهد بالایی به کیفیت کد و مدیریت تیم دارند و همواره اطمینان حاصل می‌کنند که تمامی تسک‌ها با دقت و در زمان مقرر اجرا شوند. تسلط ایشان بر معماری نرم‌افزار و اصول کدنویسی تمیز، به موفقیت هر پروژه‌ای کمک شایانی می‌کند.">Collaborating with Amirhossein Darbandi was a very professional experience. He has a high commitment to code quality and team management, ensuring that all tasks are executed precisely and on time. His mastery of software architecture and clean code principles greatly contributes to the success of any project.</p>
+                    </div>
+
+                    <!-- 3. Saeed Ebrahimpour -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Saeed Ebrahimpour" data-fa="سعید ابراهیم‌پور">Saeed Ebrahimpour</h4>
+                            <p class="job-title" data-en="iOS Developer" data-fa="برنامه‌نویس iOS">iOS Developer</p>
+                        </div>
+                        <p data-en="His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously." data-fa="تخصص و دقت ایشان در توسعه اپلیکیشن‌های iOS و هماهنگی عالی با تیم بک‌اند، در پروژه‌های مشترک ما بسیار اثربخش بود. او مهندسی سخت‌کوش و قابل‌اعتماد است که اهداف تیم را به طور جدی دنبال می‌کند.">His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously.</p>
+                    </div>
+
+                    <!-- 4. Mobina Ghasempour -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Mobina Ghasempour" data-fa="مبینا قاسمی‌پور">Mobina Ghasempour</h4>
+                            <p class="job-title" data-en="Head of Marketing Team" data-fa="هد تیم مارکتینگ">Head of Marketing Team</p>
+                        </div>
+                        <p data-en="Her strategic vision and professional interaction as the Head of Marketing played a significant role in advancing the project goals. She recognizes the immense value that professional and committed backend engineers bring to complex technological projects." data-fa="دیدگاه استراتژیک و تعامل حرفه‌ای ایشان به عنوان هد تیم مارکتینگ، در پیشبرد اهداف پروژه بسیار مؤثر واقع شد. ایشان به ارزش بی‌نهایتی که مهندسان بک‌اند حرفه‌ای و متعهد به پروژه‌های فناورانه پیچیده می‌آورند، واقف هستند.">Her strategic vision and professional interaction as the Head of Marketing played a significant role in advancing the project goals. She recognizes the immense value that professional and committed backend engineers bring to complex technological projects.</p>
+                    </div>
+
+                    <!-- 5. Mehdi Dehghani -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <h4 data-en="Mehdi Dehghani" data-fa="مهندس مهدی دهقانی">Mehdi Dehghani</h4>
@@ -476,7 +524,7 @@
                         <p data-en="At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity." data-fa="در شرکت فام ایشون برنامه‌نویس بک‌اند و من هم برنامه‌نویس اندروید بودیم. هر دومون روی پروژه نئوبانک موسسه اعتباری ملل کار می‌کردیم و کلی فیچرهای جدید رو با همدیگه توسعه دادیم توی پروژه مثل پرداخت قبوض، خرید شارژ و خرید بسته، نوتیفیکیشن‌ها، قسمت‌هایی از تسهیلات و بیشتر قسمت‌های افتتاح حساب. برای رساندن تسک‌های پروژه در زمان مقرر واقعاً متعهد و پیگیر بودن. در مجموع ایشون در محیط کار واقعاً متعهد، منظم، خوش‌اخلاق، رازدارترین و یکی از بی‌حاشیه همکارها بودن. برایشان آرزوی موفقیت و بهروزی دارم.">At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity.</p>
                     </div>
 
-                    <!-- Recommendation 3: Masoud Shahrian -->
+                    <!-- 6. Dr. Masoud Shahrian -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <h4 data-en="Dr. Masoud Shahrian" data-fa="دکتر مسعود شهریان">Dr. Masoud Shahrian</h4>
