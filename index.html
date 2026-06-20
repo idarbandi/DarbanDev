@@ -1,10 +1,3 @@
-بسیار عذر می‌خواهم، حق با شماست. من با دقت تصاویر پوشه images که فرستادید را بررسی کردم و متوجه شدم فایل‌های 7learn_certificate.jpeg و Amazon_web_services_certificate.jpeg در لیست شما وجود ندارند (احتمالاً آپلود نشده‌اند یا نام دیگری دارند).
-
-در نسخه جدید، این دو گواهینامه را از لیست حذف کردم تا تصاویر بدون خطا بارگذاری شوند، و نام بقیه تصاویر گواهینامه را دقیقاً طبق فایل‌های موجود در عکس‌هایی که فرستادید اصلاح کردم.
-
-در ادامه کد کامل و بروزرسانی‌شده index.html را قرار می‌دهم. فقط کافیست آن را جایگزین فایل قبلی کنید:
-
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -82,22 +75,31 @@
             flex-grow: 1;
         }
         
-        /* استایل جدید بخش گواهینامه‌ها */
+        /* استایل جدید بخش گواهینامه‌ها - تعمیر شده برای تراز عمودی */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
         .cert-item {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-start; /* تراز چپ */
             text-align: left;
             background: var(--bg-color-secondary, #fff);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: 100%;
+            border: 1px solid var(--border);
         }
         .cert-header {
             display: flex;
+            flex-direction: column; /* تغییر جهت برای تراز عمودی بهتر */
             align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 15px;
+            width: 100%;
         }
         .cert-item .cert-logo {
             width: 48px;
@@ -106,6 +108,9 @@
             border-radius: 8px;
             background: #fff;
             padding: 4px;
+        }
+        .cert-details {
+            text-align: center;
         }
         .cert-details h4 {
             margin: 0 0 4px 0;
@@ -121,11 +126,13 @@
             color: var(--text-muted, #999);
             margin-top: 4px;
         }
+        
         .cert-credential {
             display: flex;
             flex-direction: column;
             gap: 8px;
-            margin-top: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             width: 100%;
         }
         .cert-credential span {
@@ -146,6 +153,7 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
             width: fit-content;
+            margin-top: 5px;
         }
         .cert-credential .btn-credential:hover {
             background: #f0f0f0;
@@ -153,12 +161,15 @@
         .cert-credential .btn-credential i {
             font-size: 0.8rem;
         }
+        
+        /* بخش عکس گواهینامه که باعث ایجاد فضای یکسان می‌شود */
         .cert-image-wrapper {
-            margin-top: 15px;
+            margin-top: auto; /* این باعث می‌شود عکس همیشه به پایین کارت بچسبد */
             width: 100%;
             border: 1px solid #eee;
             border-radius: 4px;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .cert-image-wrapper img {
             width: 100%;
@@ -231,9 +242,10 @@
                         <img src="images/orofile.jpg" alt="Amir Darbandi Profile">
                     </div>
                 </div>
-                <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر (DarbanDev) داربندی">Amir (DarbanDev) Darbandi</h1>
-                <p class="hero-subtitle" data-en="Software Engineer | Backend Developer | Fintech Specialist" data-fa="مهندس نرم‌افزار | توسعه‌دهنده بک‌اند | متخصص فین‌تک">Software Engineer | Backend Developer | Fintech Specialist</p>
-                <p class="hero-description" data-en="Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning." data-fa="ساخت سیستم‌های بک‌اند محکم و مقیاس‌پذیر با Python و Go. علاقه‌مند به میکروسرویس‌ها، معماری سیستم و یادگیری مستمر.">Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning.</p>
+                <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر حسین دربندی">Amir (DarbanDev) Darbandi</h1>
+                <p class="hero-subtitle" data-en="Software Engineer | Python, GO | Microservice & System Architecture | Fintech & E-Commerce | CI/CD pipelines | Docker | Unittest & Load test
+" data-fa="مهندس نرم‌افزار | توسعه‌دهنده بک‌اند | متخصص فین‌تک">Software Engineer | Backend Developer | Fintech Specialist</p>
+                <p class="hero-description" data-en="Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning." data-fa="ساخت سیستم‌های بک‌اند پایدار و مقیاس‌پذیر با Python و Go. علاقه‌مند به میکروسرویس‌ها، معماری سیستم و یادگیری مستمر.">Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary" data-en="Get In Touch" data-fa="تماس بگیری">Get In Touch</a>
                     <a href="https://github.com/idarbandi" target="_blank" class="btn btn-secondary">
@@ -250,12 +262,12 @@
                 <h2 class="section-title" data-en="About Me" data-fa="درباره‌ی من">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p data-en="I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms." data-fa="من یک مهندس نرم‌افزار متعهد هستم که 3+ سال تجربه در ساخت سیستم‌های قابل‌اعتماد و عملکرد بالا دارم. تخصص من در توسعه بک‌اند با Python و Go شامل طراحی و پیاده‌سازی معماری سیستم و میکروسرویس‌ها برای پلتفرم‌های مالی است.">I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms.</p>
-                        <p data-en="Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills." data-fa="در حال حاضر در بانک رفاه کارگران، من سیستم‌های هسته‌ای برای بانکداری دیجیتال و راه‌حل‌های فین‌تک می‌سازم. کار در این فضا به این معنی است که همه چیز باید ایمن، سریع و بسیار در دسترس باشد—که مرا برای بهبود مستمر توانایی‌های طراحی معماری و بهینه‌سازی می‌رانند.">Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills.</p>
+                        <p data-en="I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms." data-fa="من یک مهندس نرم‌افزار متعهد هستم که 5+ سال تجربه در ساخت سیستم‌های قابل‌اعتماد و عملکرد بالا دارم. تخصص من در توسعه بک‌اند با Python و Go شامل طراحی و پیاده‌سازی معماری سیستم و میکروسرویس‌ها برای پلتفرم‌های مالی است.">I'm a dedicated Software Engineer with 5+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms.</p>
+                        <p data-en="Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills." data-fa="در حال حاضر در بانک رفاه کارگران، بعنوان کارشناس مایگیریشن و سویَچ بانکی مبتنی بر بانکداری متمرکز فعالیت میکنم. کار در این فضا به این معنی است که همه چیز باید ایمن، سریع و بسیار در دسترس باشد—که مرا برای بهبود مستمر توانایی‌های طراحی معماری و بهینه‌سازی وادار میکند.">Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills.</p>
                     </div>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <h3 data-en="3+" data-fa="۳+">3+</h3>
+                            <h3 data-en="5+" data-fa="۵+">5+</h3>
                             <p data-en="Years of Experience" data-fa="سال تجربه">Years of Experience</p>
                         </div>
                         <div class="stat-item">
@@ -264,7 +276,7 @@
                         </div>
                         <div class="stat-item">
                             <h3 data-en="500+" data-fa="۵۰۰+">500+</h3>
-                            <p data-en="LinkedIn Connections" data-fa="اتصالات LinkedIn">LinkedIn Connections</p>
+                            <p data-en="LinkedIn Connections" data-fa="کانکشن LinkedIn">LinkedIn Connections</p>
                         </div>
                     </div>
                 </div>
@@ -301,7 +313,7 @@
                         </div>
                         <div class="company-wrapper">
                             <img src="images/fam724_logo.jpeg" alt="Melal E-Commerce and IT (FAM)" class="company-logo">
-                            <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="ملل تجارت الکترونیک و فناوری اطلاعات">Melal E-Commerce and IT (FAM)</p>
+                            <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="تجارت الکترونیک و فناوری اطلاعات ملل (فام)">Melal E-Commerce and IT (FAM)</p>
                         </div>
                         <ul class="experience-list">
                             <li data-en="Banking Infrastructure Development" data-fa="توسعه زیرساخت بانکداری">Banking Infrastructure Development</li>
@@ -313,7 +325,7 @@
                     <!-- Job 3 -->
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 data-en="Backend Lead / FastAPI" data-fa="رهبر بک‌اند / FastAPI">Backend Lead / FastAPI</h3>
+                            <h3 data-en="Backend Lead / FastAPI" data-fa=" بک‌اند لید / FastAPI">Backend Lead / FastAPI</h3>
                             <span class="date" data-en="Sep 2025 - Mar 2026" data-fa="سپتامبر 2025 - مارس 2026">Sep 2025 - Mar 2026</span>
                         </div>
                         <p class="company" data-en="Persian Greyhound Startup (Remote)" data-fa="استارتاپ پرشین گرهاند (راه دور)">Persian Greyhound Startup (Remote)</p>
@@ -493,7 +505,7 @@
             </div>
         </section>
 
-        <!-- Certifications Section (Fixed Image Paths) -->
+        <!-- Certifications Section (Fixed Layout & Image Paths) -->
         <section class="section certifications-section">
             <div class="section-content">
                 <h2 class="section-title" data-en="Certifications & Credentials" data-fa="گواهینامه‌ها و مدارک">Certifications & Credentials</h2>
@@ -516,7 +528,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
+                            <img src="images/ Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
                         </div>
                     </div>
 
@@ -560,7 +572,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
+                            <img src="images/ IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
                         </div>
                     </div>
 
@@ -582,7 +594,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/Google_certificate.jpeg" alt="Google Python Certificate">
+                            <img src="images/ Google_certificate.jpeg" alt="Google Python Certificate">
                         </div>
                     </div>
 
@@ -662,7 +674,7 @@
                             <h4 data-en="Saeed Ebrahimpour" data-fa="سعید ابراهیم‌پور">Saeed Ebrahimpour</h4>
                             <p class="job-title" data-en="iOS Developer" data-fa="برنامه‌نویس iOS">iOS Developer</p>
                         </div>
-                        <p data-en="His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously." data-fa="تخصص و دقت ایشان در توسعه اپلیکیشن‌های iOS و هماهنگی عالی با تیم بک‌اند، در پروژه‌های مشترک ما بسیار اثربخش بود. او مهندسی سخت‌کوش و قابل‌اعتماد است که اهداف تیم را به طور جدی دنبال می‌کند.">His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously.</p>
+                        <p data-en="His expertise and precision in backend development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously." data-fa="تخصص و دقت ایشان در توسعه بکند و هماهنگی عالی با تیم بک‌اند، در پروژه‌های مشترک ما بسیار اثربخش بود. او مهندسی سخت‌کوش و قابل‌اعتماد است که اهداف تیم را به طور جدی دنبال می‌کند.">His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously.</p>
                     </div>
 
                     <!-- 4. Mobina Ghasempour -->
@@ -703,7 +715,7 @@
                 <div class="contact-content">
                     <p data-en="I'm always interested in hearing about new projects and opportunities. Feel free to reach out!" data-fa="من همیشه علاقه‌مند به شنیدن پروژه‌های جدید و فرصت‌ها هستم. می‌توانی آزادانه تماس بگیری!">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
                     <div class="contact-links">
-                        <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <a href="https://linkedin.com/in/amir-darbandi-72526b25b/" target="_blank" class="contact-link">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
@@ -723,7 +735,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
-                <p data-en="&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS" data-fa="&copy; 1405 امیر داربندی. تمام حقوق محفوظ است. | ساخته شده با ❤️ و HTML/CSS/JS خالص">&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS</p>
+                <p data-en="&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS" data-fa="&copy; 1405 امیر دربندی. تمام حقوق محفوظ است. | ساخته شده با ❤️ و HTML/CSS/JS خالص">&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS</p>
             </div>
         </footer>
     </div>
@@ -731,4 +743,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-```
