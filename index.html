@@ -4,8 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amir Darbandi - Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ystyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- استایل‌های ضروری برای نمایش صحیح تصاویر و عناصر جدید بدون شکستن استایل اصلی -->
+    <style>
+        /* تنظیم آواتار با عکس پروفایل */
+        .hero-avatar .avatar-circle {
+            overflow: hidden;
+            background: var(--surface);
+        }
+        .hero-avatar .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-avatar .avatar-circle i {
+            display: none; /* مخفی کردن آیکون کد */
+        }
+        
+        /* نمایش لوگوی کنار نام شرکت در تجربه کاری */
+        .experience-item .company-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            justify-content: flex-start;
+        }
+        .experience-item .company-wrapper .company-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        .experience-item .company-wrapper .company {
+            margin: 0;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        body[dir="rtl"] .experience-item .company-wrapper {
+            justify-content: flex-end;
+        }
+
+        /* ساختار کارت گواهینامه‌ها برای نمایش اطلاعات و عکس (درون استایل پایه) */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            padding: 20px;
+        }
+        body[dir="rtl"] .cert-item {
+            align-items: flex-end;
+            text-align: right;
+        }
+        .cert-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .cert-item .cert-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #fff;
+            padding: 4px;
+            margin-bottom: 8px;
+        }
+        .cert-credential {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .cert-credential .btn-credential {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--border, #ccc);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--text-primary, #000);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+        .cert-credential .btn-credential:hover {
+            background: #f0f0f0;
+        }
+        .cert-credential .btn-credential i {
+            font-size: 0.7rem;
+        }
+        .cert-image-wrapper {
+            margin-top: auto;
+            width: 100%;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .cert-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* بخش توصیه‌نامه با شماره تماس */
+        .testimonial-header .phone-number {
+            font-size: 0.85rem;
+            color: var(--primary, #0a66c2);
+            margin-top: 2px;
+            font-weight: 600;
+        }
+        
+        /* تنظیم راست‌چین در حالت فارسی برای نام/شماره */
+        body[dir="rtl"] .testimonial-header {
+            flex-direction: row-reverse;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -39,11 +166,12 @@
                 <div class="hero-avatar">
                     <div class="avatar-circle">
                         <i class="fas fa-code"></i>
+                        <img src="images/orofile.jpg" alt="Amir Darbandi Profile">
                     </div>
                 </div>
-                <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر (DarbanDev) داربندی">Amir (DarbanDev) Darbandi</h1>
-                <p class="hero-subtitle" data-en="Software Engineer | Backend Developer | Fintech Specialist" data-fa="مهندس نرم‌افزار | توسعه‌دهنده بک‌اند | متخصص فین‌تک">Software Engineer | Backend Developer | Fintech Specialist</p>
-                <p class="hero-description" data-en="Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning." data-fa="ساخت سیستم‌های بک‌اند محکم و مقیاس‌پذیر با Python و Go. علاقه‌مند به میکروسرویس‌ها، معماری سیستم و یادگیری مستمر.">Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning.</p>
+                <h1 class="hero-title" data-en="Amir (DarbanDev) Darbandi" data-fa="امیر حسین دربندی">Amir (DarbanDev) Darbandi</h1>
+                <p class="hero-subtitle" data-en="Software Engineer | Python, GO | Microservice & System Architecture | Fintech & E-Commerce | CI/CD pipelines | Docker | Unittest & Load test" data-fa="مهندس نرم‌افزار | توسعه‌دهنده بک‌اند | متخصص فین‌تک">Software Engineer | Python, GO | Microservice & System Architecture | Fintech & E-Commerce | CI/CD pipelines | Docker | Unittest & Load test</p>
+                <p class="hero-description" data-en="Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning." data-fa="ساخت سیستم‌های بک‌اند پایدار و مقیاس‌پذیر با Python و Go. علاقه‌مند به میکروسرویس‌ها، معماری سیستم و یادگیری مستمر.">Crafting robust and scalable backend systems with Python & Go. Passionate about microservices, system architecture, and continuous learning.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary" data-en="Get In Touch" data-fa="تماس بگیری">Get In Touch</a>
                     <a href="https://github.com/idarbandi" target="_blank" class="btn btn-secondary">
@@ -59,12 +187,12 @@
                 <h2 class="section-title" data-en="About Me" data-fa="درباره‌ی من">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p data-en="I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms." data-fa="من یک مهندس نرم‌افزار متعهد هستم که 3+ سال تجربه در ساخت سیستم‌های قابل‌اعتماد و عملکرد بالا دارم. تخصص من در توسعه بک‌اند با Python و Go شامل طراحی و پیاده‌سازی معماری سیستم و میکروسرویس‌ها برای پلتفرم‌های مالی است.">I'm a dedicated Software Engineer with 3+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms.</p>
-                        <p data-en="Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills." data-fa="در حال حاضر در بانک رفاه کارگران، من سیستم‌های هسته‌ای برای بانکداری دیجیتال و راه‌حل‌های فین‌تک می‌سازم. کار در این فضا به این معنی است که همه چیز باید ایمن، سریع و بسیار در دسترس باشد—که مرا برای بهبود مستمر توانایی‌های طراحی معماری و بهینه‌سازی می‌رانند.">Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills.</p>
+                        <p data-en="I'm a dedicated Software Engineer with 5+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms." data-fa="من یک مهندس نرم‌افزار متعهد هستم که 5+ سال تجربه در ساخت سیستم‌های قابل‌اعتماد و عملکرد بالا دارم. تخصص من در توسعه بک‌اند با Python و Go شامل طراحی و پیاده‌سازی معماری سیستم و میکروسرویس‌ها برای پلتفرم‌های مالی است.">I'm a dedicated Software Engineer with 5+ years of experience building reliable and high-performance systems. My expertise spans Python and Go backend development, where I design and implement System & Microservice Architectures for financial platforms.</p>
+                        <p data-en="Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills." data-fa="در حال حاضر در بانک رفاه کارگران، بعنوان کارشناس مایگیریشن و سویَچ بانکی مبتنی بر بانکداری متمرکز فعالیت میکنم. کار در این فضا به این معنی است که همه چیز باید ایمن، سریع و بسیار در دسترس باشد—که مرا برای بهبود مستمر توانایی‌های طراحی معماری و بهینه‌سازی وادار میکند.">Currently at Bank Refah Kargaran, I engineer core systems for digital banking and fintech solutions. Working in this space means everything must be secure, fast, and highly available—which drives me to continuously improve my architectural design and optimization skills.</p>
                     </div>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <h3 data-en="3+" data-fa="۳+">3+</h3>
+                            <h3 data-en="5+" data-fa="۵+">5+</h3>
                             <p data-en="Years of Experience" data-fa="سال تجربه">Years of Experience</p>
                         </div>
                         <div class="stat-item">
@@ -73,7 +201,7 @@
                         </div>
                         <div class="stat-item">
                             <h3 data-en="500+" data-fa="۵۰۰+">500+</h3>
-                            <p data-en="LinkedIn Connections" data-fa="اتصالات LinkedIn">LinkedIn Connections</p>
+                            <p data-en="LinkedIn Connections" data-fa="کانکشن LinkedIn">LinkedIn Connections</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +217,10 @@
                             <h3 data-en="Migration & Microservices Engineer" data-fa="مهندس مهاجرت و میکروسرویس‌ها">Migration & Microservices Engineer</h3>
                             <span class="date" data-en="May 2026 - Present" data-fa="می 2026 - کنون">May 2026 - Present</span>
                         </div>
-                        <p class="company" data-en="Bank Refah Kargaran - Payment Switch Department" data-fa="بانک رفاه کارگران - دپارتمان سوئیچ پرداخت">Bank Refah Kargaran - Payment Switch Department</p>
+                        <div class="company-wrapper">
+                            <img src="images/bankrefahkargaran_logo.jpeg" alt="Bank Refah Kargaran" class="company-logo">
+                            <p class="company" data-en="Bank Refah Kargaran - Payment Switch Department" data-fa="بانک رفاه کارگران - دپارتمان سوئیچ پرداخت">Bank Refah Kargaran - Payment Switch Department</p>
+                        </div>
                         <ul class="experience-list">
                             <li data-en="API & Protocol Gateway Development" data-fa="توسعه API و Gateway پروتکل">API & Protocol Gateway Development</li>
                             <li data-en="Message Format Standardization (ISO 8583, ISO 20022)" data-fa="استانداردسازی فرمت‌های پیام (ISO 8583, ISO 20022)">Message Format Standardization (ISO 8583, ISO 20022)</li>
@@ -102,7 +233,10 @@
                             <h3 data-en="Backend Developer" data-fa="توسعه‌دهنده بک‌اند">Backend Developer</h3>
                             <span class="date" data-en="Nov 2025 - Mar 2026" data-fa="نوامبر 2025 - مارس 2026">Nov 2025 - Mar 2026</span>
                         </div>
-                        <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="ملل تجارت الکترونیک و فناوری اطلاعات">Melal E-Commerce and IT (FAM)</p>
+                        <div class="company-wrapper">
+                            <img src="images/fam724_logo.jpeg" alt="Melal E-Commerce and IT (FAM)" class="company-logo">
+                            <p class="company" data-en="Melal E-Commerce and IT (FAM)" data-fa="تجارت الکترونیک و فناوری اطلاعات ملل (فام)">Melal E-Commerce and IT (FAM)</p>
+                        </div>
                         <ul class="experience-list">
                             <li data-en="Banking Infrastructure Development" data-fa="توسعه زیرساخت بانکداری">Banking Infrastructure Development</li>
                             <li data-en="Oracle Database Management" data-fa="مدیریت پایگاه داده Oracle">Oracle Database Management</li>
@@ -112,7 +246,7 @@
 
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h3 data-en="Backend Lead / FastAPI" data-fa="رهبر بک‌اند / FastAPI">Backend Lead / FastAPI</h3>
+                            <h3 data-en="Backend Lead / FastAPI" data-fa="بک‌اند لید / FastAPI">Backend Lead / FastAPI</h3>
                             <span class="date" data-en="Sep 2025 - Mar 2026" data-fa="سپتامبر 2025 - مارس 2026">Sep 2025 - Mar 2026</span>
                         </div>
                         <p class="company" data-en="Persian Greyhound Startup (Remote)" data-fa="استارتاپ پرشین گرهاند (راه دور)">Persian Greyhound Startup (Remote)</p>
@@ -287,43 +421,218 @@
 
         <section class="section certifications-section">
             <div class="section-content">
-                <h2 class="section-title" data-en="Certifications" data-fa="گواهینامه‌ها">Certifications</h2>
+                <h2 class="section-title" data-en="Certifications & Credentials" data-fa="گواهینامه‌ها و مدارک">Certifications & Credentials</h2>
                 <div class="certifications-grid">
+                    <!-- Microsoft Python -->
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>AWS Cloud Practitioner</h4>
-                        <p data-en="Amazon Web Services" data-fa="سرویس‌های ابری آمازون">Amazon Web Services</p>
-                        <span class="cert-date" data-en="May 2024" data-fa="می 2024">May 2024</span>
+                        <div class="cert-header">
+                            <img src="images/microsoft_logo.jpeg" alt="Microsoft" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Python Programming Fundamentals" data-fa="مبانی برنامه‌نویسی پایتون">Python Programming Fundamentals</h4>
+                                <p>Microsoft</p>
+                                <div class="cert-date" data-en="Issued Jun 2026" data-fa="اعطا شده ژوئن 2026">Issued Jun 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: ZNL8W9ABZP2N" data-fa="شناسه مدرک: ZNL8W9ABZP2N">Credential ID: ZNL8W9ABZP2N</span>
+                            <a href="https://www.coursera.org/verify/ZNL8W9ABZP2N" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/ Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
+                        </div>
+                    </div>
+
+                    <!-- Meta Backend -->
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <img src="images/meta_logo.jpeg" alt="Meta" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Introduction To The Meta Backend Development" data-fa="مقدمه ای بر توسعه بک‌اند متا">Introduction To The Meta Backend Development</h4>
+                                <p>Meta</p>
+                                <div class="cert-date" data-en="Issued Apr 2026" data-fa="اعطا شده آوریل 2026">Issued Apr 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: HD5DWN7ZPZMA" data-fa="شناسه مدرک: HD5DWN7ZPZMA">Credential ID: HD5DWN7ZPZMA</span>
+                            <a href="https://www.coursera.org/verify/HD5DWN7ZPZMA" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/meta_certificate.jpeg" alt="Meta Backend Certificate">
+                        </div>
+                    </div>
+
+                    <!-- IBM Backend -->
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <img src="images/ibm_logo.jpeg" alt="IBM" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="IBM Backend Developer" data-fa="توسعه‌دهنده بک‌اند آی‌بی‌ام">IBM Backend Developer</h4>
+                                <p>IBM</p>
+                                <div class="cert-date" data-en="Issued Jun 2026" data-fa="اعطا شده ژوئن 2026">Issued Jun 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: 9cbdf059082f" data-fa="شناسه مدرک: 9cbdf059082f">Credential ID: 9cbdf059082f</span>
+                            <a href="https://www.coursera.org/verify/9cbdf059082f" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/ IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
+                        </div>
+                    </div>
+
+                    <!-- Google Python -->
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <img src="images/google_logo.jpeg" alt="Google" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Crash Course On Python" data-fa="دوره فشرده پایتون">Crash Course On Python</h4>
+                                <p>Google</p>
+                                <div class="cert-date" data-en="Issued May 2026" data-fa="اعطا شده می 2026">Issued May 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: ZIN7KNPZIQFW" data-fa="شناسه مدرک: ZIN7KNPZIQFW">Credential ID: ZIN7KNPZIQFW</span>
+                            <a href="https://www.coursera.org/verify/ZIN7KNPZIQFW" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/ Google_certificate.jpeg" alt="Google Python Certificate">
+                        </div>
+                    </div>
+
+                    <!-- FaraDars LPIC -->
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <img src="images/faradars_logo.jpeg" alt="FaraDars" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="LPIC-1 Preparations" data-fa="مقدمات LPIC-1">LPIC-1 Preparations</h4>
+                                <p>FaraDars</p>
+                                <div class="cert-date" data-en="Issued Jan 2026" data-fa="اعطا شده ژانویه 2026">Issued Jan 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: 0CCA9097" data-fa="شناسه مدرک: 0CCA9097">Credential ID: 0CCA9097</span>
+                            <a href="https://faradars.org/verify/0CCA9097" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/faradars_certificate.jpeg" alt="FaraDars LPIC Certificate">
+                        </div>
+                    </div>
+
+                    <!-- Hamrah Academy Grafana -->
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <img src="images/hamrah_academy_logo.jpeg" alt="Hamrah Academy" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Grafana" data-fa="گرافانا">Grafana</h4>
+                                <p>Hamrah Academy</p>
+                                <div class="cert-date" data-en="Issued May 2026" data-fa="اعطا شده می 2026">Issued May 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: E5JRY5NYN6VZ" data-fa="شناسه مدرک: E5JRY5NYN6VZ">Credential ID: E5JRY5NYN6VZ</span>
+                            <a href="https://hanrahacademy.ir/verify/E5JRY5NYN6VZ" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/hamrahAcademy_certificates.jpeg" alt="Hamrah Academy Grafana Certificate">
+                        </div>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Golang Expert</h4>
-                        <p>7Learn</p>
-                        <span class="cert-date" data-en="May 2022" data-fa="می 2022">May 2022</span>
+                        <div class="cert-header">
+                            <img src="images/w3logo.jpg" alt="w3schools.com" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Grafana" data-fa="گرافانا">Web Design Specialist Certification</h4>
+                                <p>w3schools</p>
+                                <div class="cert-date" data-en="Issued Nov 2022" data-fa="اعطا شده نوامبر 2026">Issued Nov 2022</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID:  w3s-wd-20221120-AHD" data-fa="شناسه مدرک:  w3s-wd-20221120-AHD">Credential ID:  w3s-wd-20221120-AHD</span>
+                            <a href="" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/w3_cert.jpg" alt="w3schools">
+                        </div>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>IBM Backend Developer</h4>
-                        <p>IBM</p>
-                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
+                        <div class="cert-header">
+                            <img src="images/amazon_web_services_logo.jpeg" alt="aws Academy" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="Grafana" data-fa="AWS Cloud Practitioner">AWS Cloud Practitioner</h4>
+                                <p>AWS</p>
+                                <div class="cert-date" data-en="Issued May 2024" data-fa="اعطا شده می 2024">Issued May 2024</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: Ab455NYN6VZ" data-fa="شناسه مدرک: Ab455NYN6VZ">Credential ID: Ab455NYN6VZ</span>
+                            <a href="Ab455NYN6VZ" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/aws_certificate.jpg" alt="aws Certificate">
+                        </div>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Meta Backend Development</h4>
-                        <p>Meta</p>
-                        <span class="cert-date" data-en="Apr 2026" data-fa="آوریل 2026">Apr 2026</span>
+                        <div class="cert-header">
+                            <img src="images/7learn_logo.jpeg" alt="7learn Academy" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="GO" data-fa="GO">GO</h4>
+                                <p>7learn</p>
+                                <div class="cert-date" data-en="Issued May 2022" data-fa="اعطا شده می 2022">Issued May 2022</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: mArKo93Cpi" data-fa="شناسه مدرک: mArKo93Cpi">Credential ID: mArKo93Cpi</span>
+                            <a href="https://www.linkedin.com/safety/go/?url=https%3A%2F%2F7learn.com%2Fcrt%3Fh%3DmArKo93Cpi&urlhash=UJdw&mt=zjqKh2lvMZQcCNgL7WIW3zrzQO0IunmyXvP8fqDulprTsPoNqMzcJjS_UoQo0zFauEsgN9v9tJ8XSBrANqh9uNG56C4E&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BUfVue8w%2FSUizZt0J%2FLxf%2BQ%3D%3D" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/7learn_go_cert.jpg" alt="go">
+                        </div>
                     </div>
                     <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Python Programming</h4>
-                        <p>Microsoft</p>
-                        <span class="cert-date" data-en="Jun 2026" data-fa="ژون 2026">Jun 2026</span>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <h4>LPIC-1 Preparations</h4>
-                        <p>FaraDars</p>
-                        <span class="cert-date" data-en="Jan 2026" data-fa="ژانویه 2026">Jan 2026</span>
+                        <div class="cert-header">
+                            <img src="images/mk_logo.jpg" alt="Hamrah Academy" class="cert-logo">
+                            <div class="cert-details">
+                                <h4 data-en="دوره آموزش خودکارسازی وظایف امنیت سایبری با پایتون" data-fa="دوره آموزش خودکارسازی وظایف امنیت سایبری با پایتون">دوره آموزش خودکارسازی وظایف امنیت سایبری با پایتون</h4>
+                                <p>Maktabkhooneh | مکتب‌خونه</p>
+                                <div class="cert-date" data-en="Issued Jan 2026" data-fa="اعطا شده ژانویه 2026">Issued jan 2026</div>
+                            </div>
+                        </div>
+                        <div class="cert-credential">
+                            <span data-en="Credential ID: MK-HAZ8NC" data-fa="شناسه مدرک: MK-HAZ8NC">Credential ID: MK-HAZ8NC</span>
+                            <a href="https://maktabkhooneh.org/certificates/MK-HAZ8NC/?lang=fa" target="_blank" class="btn-credential">
+                                <span data-en="Show credential" data-fa="نمایش مدرک">Show credential</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-image-wrapper">
+                            <img src="images/mk_cert.jpg" alt="Maktabkhooneh | مکتب‌خونه">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,46 +640,66 @@
 
         <section class="section testimonials-section">
             <div class="section-content">
-                <h2 class="section-title" data-en="What Others Say" data-fa="نظر دیگران">What Others Say</h2>
+                <h2 class="section-title" data-en="Recommendations" data-fa="توصیه‌نامه‌ها">Recommendations</h2>
                 <div class="testimonials-grid">
+                    <!-- 1. Saeed Abutalebi -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Mehdi Dehghani</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Saeed Abutalebi" data-fa="سعید ابوطالبی">Saeed Abutalebi</h4>
+                            <p class="job-title" data-en="Switch Developer" data-fa="توسعه‌دهنده سوئیچ">Switch Developer</p>
+                            <p class="phone-number" data-en="📞 09037457674" data-fa="📞 ۰۹۰۳۷۴۵۷۶۷۴">📞 ۰۹۰۳۷۴۵۷۶۷۴</p>
                         </div>
-                        <p data-en="I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member." data-fa="من از همکاری با او لذت بردم و با اطمینان می‌توانم بگویم که او یک متخصص فوق‌العاده است. فراتر از توانایی‌های فنی‌اش، او یک همکار بسیار مهربان، انعطاف‌پذیر و قابل‌اعتماد است.">I had the pleasure of working with him, and I can confidently say he is an outstanding professional. Beyond his technical abilities, he is an incredibly kind, flexible, and reliable team member.</p>
+                        <p data-en="Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention." data-fa="امیرحسین دربندی برنامه‌نویس قوی با رویکرد مهندسی نرم‌افزار هستش که تا جایی که من می‌دیدم دائماً در حال مطالعه مستندات و تکنولوژی‌های روز بود و سعی داشت به هیچ وجه از پیشرفت‌های تکنولوژی‌های روز عقب نباشد. ما چند سرویس به همراه همدیگه توسعه دادیم. در مدتی که افتخار همکاری با ایشان را داشتم، مهارت و تعهد کاری را به وضوح در ایشان مشاهده کردم. تسلط به فریم‌ورک‌ها و زبان‌های برنامه‌نویسی، مطالعه و به‌روز بودن، استفاده درست و به‌جا از اصول برنامه‌نویسی از جمله clean code و مهارت‌های ایشان است. در کنار مواردی که ذکر کردم لازم است به تمرکز بالای ایشان در کار اشاره کنم، مسئله‌ای که برای یک برنامه‌نویس مزیت ویژه‌ای است. اگر تخصص و تعهد کاری ملاک شماست، ایشان شایسته‌ترین گزینه هستند. بنده سابقه همکاری با ایشان در فناوری اطلاعات ملل (فام) را داشته‌ام. ایشان بسیار منظم و آراسته و با دانش در زمینه برنامه‌نویسی پایتون، کار با لینوکس و همچنین دانش بسیار والا در زمینه شبکه‌های کامپیوتری می‌باشد. وجود چنین فردی در هر سازمانی منجر به ترقی و بالا رفتن سطح فنی سازمان می‌باشد. متعهد بودن و وظیفه‌شناسی و تعهد به آماده کردن تسک‌ها سر ددلاین از ویژگی‌های مهندس دربندی بود که من باید ذکر کنم.">Amirhossein Darbandi is a strong programmer with a software engineering approach. As far as I have seen, he is constantly studying documentation and new technologies and strives not to fall behind in any way. We developed several services together. During the time I had the honor of collaborating with him, I clearly observed his skill and commitment. His mastery of frameworks and programming languages, being up-to-date, proper use of programming principles including clean code, and his focus are among his skills. I must also mention his high concentration at work, which is a special advantage for a programmer. If expertise and commitment are your criteria, he is the most qualified choice. I have collaborated with him at Melal IT (FAM). He is very organized and knowledgeable in Python programming, Linux, and has deep knowledge in computer networks. The presence of such a person in any organization leads to technical growth of the team. Commitment, responsibility, and dedication to completing tasks before deadlines were among Mr. Darbandi's characteristics that I must mention.</p>
                     </div>
+
+                    <!-- 2. Amirhossein Shokr -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Morteza Karimi</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Amirhossein Shokr" data-fa="مهندس امیرحسین شکر">Amirhossein Shokr</h4>
+                            <p class="job-title" data-en="Senior Web Developer & Frontend Lead" data-fa="برنامه‌نویس ارشد وب و لید فرانت‌اند">Senior Web Developer & Frontend Lead</p>
+                            <p class="phone-number" data-en="📞 0919073093" data-fa="📞 ۰۹۱۹۰۷۳۰۹۳">📞 ۰۹۱۹۰۷۳۰۹۳</p>
                         </div>
-                        <p data-en="I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills." data-fa="من با امیر داربندی کار کردم و او را یک توسعه‌دهنده بک‌اند بسیار توانمند و قابل‌اعتماد یافتم. او یک ذهنیت قوی حل‌مسئله دارد و همیشه مایل است توانایی‌های خود را بهبود بخشد.">I've worked with Amir Darbandi and found him to be a highly capable and reliable backend developer. He has a strong problem-solving mindset and is always eager to improve his skills.</p>
+                        <p data-en="Collaborating with Amirhossein Darbandi was a very professional experience. He has a high commitment to code quality and team management, ensuring that all tasks are executed precisely and on time. His mastery of software architecture and clean code principles greatly contributes to the success of any project." data-fa="همکاری با امیرحسین دربندی تجربه‌ای بسیار حرفه‌ای بود. ایشان تعهد بالایی به کیفیت کد و مدیریت تیم دارند و همواره اطمینان حاصل می‌کنند که تمامی تسک‌ها با دقت و در زمان مقرر اجرا شوند. تسلط ایشان بر معماری نرم‌افزار و اصول کدنویسی تمیز، به موفقیت هر پروژه‌ای کمک شایانی می‌کند.">Collaborating with Amirhossein Darbandi was a very professional experience. He has a high commitment to code quality and team management, ensuring that all tasks are executed precisely and on time. His mastery of software architecture and clean code principles greatly contributes to the success of any project.</p>
                     </div>
+
+                    <!-- 3. Saeed Ebrahimpour -->
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <h4>Masoud Shahrian</h4>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 data-en="Saeed Ebrahimpour" data-fa="سعید ابراهیم‌پور">Saeed Ebrahimpour</h4>
+                            <p class="job-title" data-en="iOS Developer" data-fa="برنامه‌نویس iOS">iOS Developer</p>
+                            <p class="phone-number" data-en="📞 09035559818" data-fa="📞 ۰۹۰۳۵۵۵۹۸۱۸">📞 ۰۹۰۳۵۵۵۹۸۱۸</p>
                         </div>
-                        <p data-en="I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability." data-fa="من خوشحالم که امیر داربندی را به عنوان یک Full Stack Developer بسیار مهارت‌مند توصیه کنم. من با اطمینان می‌توانم تخصص فنی فوق‌العاده، حرفه‌گرایی و قابل‌اعتماد بودن او را تأیید کنم.">I am delighted to recommend Amir Darbandi as a highly skilled Full Stack Developer. I can confidently attest to his exceptional technical expertise, professionalism, and reliability.</p>
+                        <p data-en="His expertise and precision in backend development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously." data-fa="تخصص و دقت ایشان در توسعه بک‌اند و هماهنگی عالی با تیم بک‌اند، در پروژه‌های مشترک ما بسیار اثربخش بود. او مهندسی سخت‌کوش و قابل‌اعتماد است که اهداف تیم را به طور جدی دنبال می‌کند.">His expertise and precision in iOS application development, along with seamless coordination with the backend team, were highly effective in our joint projects. He is a hardworking and reliable engineer who takes team goals seriously.</p>
+                    </div>
+
+                    <!-- 4. Mobina Ghasempour -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Mobina Ghasempour" data-fa="مبینا قاسمی‌پور">Mobina Ghasempour</h4>
+                            <p class="job-title" data-en="Head of Marketing Team" data-fa="هد تیم مارکتینگ">Head of Marketing Team</p>
+                            <p class="phone-number" data-en="📞 09001253535" data-fa="📞 ۰۹۰۰۱۲۵۳۵۳۵">📞 ۰۹۰۰۱۲۵۳۵۳۵</p>
+                        </div>
+                        <p data-en="Her strategic vision and professional interaction as the Head of Marketing played a significant role in advancing the project goals. She recognizes the immense value that professional and committed backend engineers bring to complex technological projects." data-fa="دیدگاه استراتژیک و تعامل حرفه‌ای ایشان به عنوان هد تیم مارکتینگ، در پیشبرد اهداف پروژه بسیار مؤثر واقع شد. ایشان به ارزش بی‌نهایتی که مهندسان بک‌اند حرفه‌ای و متعهد به پروژه‌های فناورانه پیچیده می‌آورند، واقف هستند.">Her strategic vision and professional interaction as the Head of Marketing played a significant role in advancing the project goals. She recognizes the immense value that professional and committed backend engineers bring to complex technological projects.</p>
+                    </div>
+
+                    <!-- 5. Mehdi Dehghani -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Mehdi Dehghani" data-fa="مهندس مهدی دهقانی">Mehdi Dehghani</h4>
+                            <p class="job-title" data-en="Android Developer at FAM & Metabank Apps" data-fa="برنامه‌نویس اندروید اپلیکیشن‌های فام و متابانک">Android Developer at FAM & Metabank Apps</p>
+                            <p class="phone-number" data-en="📞 09337625984" data-fa="📞 ۰۹۳۳۷۶۲۵۹۸۴">📞 ۰۹۳۳۷۶۲۵۹۸۴</p>
+                        </div>
+                        <p data-en="At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity." data-fa="در شرکت فام ایشون برنامه‌نویس بک‌اند و من هم برنامه‌نویس اندروید بودیم. هر دومون روی پروژه نئوبانک موسسه اعتباری ملل کار می‌کردیم و کلی فیچرهای جدید رو با همدیگه توسعه دادیم توی پروژه مثل پرداخت قبوض، خرید شارژ و خرید بسته، نوتیفیکیشن‌ها، قسمت‌هایی از تسهیلات و بیشتر قسمت‌های افتتاح حساب. برای رساندن تسک‌های پروژه در زمان مقرر واقعاً متعهد و پیگیر بودن. در مجموع ایشون در محیط کار واقعاً متعهد، منظم، خوش‌اخلاق، رازدارترین و یکی از بی‌حاشیه همکارها بودن. برایشان آرزوی موفقیت و بهروزی دارم.">At FAM company, he was a backend developer and I was an Android developer. We both worked on the Neobank project of Melal Credit Institution and developed many new features together, such as bill payments, mobile recharge, package purchases, notifications, parts of facilities, and most parts of account opening. He was really committed and persistent in delivering project tasks on time. Overall, in the work environment, he was truly committed, organized, well-mannered, trustworthy, and one of the least controversial colleagues. I wish him success and prosperity.</p>
+                    </div>
+
+                    <!-- 6. Dr. Masoud Shahrian -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <h4 data-en="Dr. Masoud Shahrian" data-fa="دکتر مسعود شهریان">Dr. Masoud Shahrian</h4>
+                            <p class="job-title" data-en="PhD in AI & Large Language Model Specialist" data-fa="دکترای هوش مصنوعی و کارشناس مدل‌های زبانی بزرگ">PhD in AI & Large Language Model Specialist</p>
+                            <p class="phone-number" data-en="📞 09122642858" data-fa="📞 ۰۹۱۲۲۶۴۲۸۵۸">📞 ۰۹۱۲۲۶۴۲۸۵۸</p>
+                        </div>
+                        <p data-en="Dear Engineer Darbandi is a young, energetic, responsible, professional, hardworking, and diligent person in carrying out assigned tasks. He has deep knowledge in his field and is very organized and presentable in the work environment, and is very meticulous and detail-oriented regarding project performance and progress. Getting to know and collaborating with him will be valuable for any group or company." data-fa="آقای مهندس دربندی عزیز جوان، پر انرژی، مسئولیت‌پذیر، حرفه‌ای، کاردان و ساعی در انجام امور محوله می‌باشند. دارای دانشی عمیق در حیطه کاری و هم‌چنین بسیار منظم و موجه در محیط کار حاضر شده و نسبت به عملکرد و پیشرفت پروژه بسیار ریزبین و نکته‌سنج می‌باشند. آشنایی و همکاری با ایشان برای هر گروه و شرکتی ذی‌قیمت خواهد بود.">Dear Engineer Darbandi is a young, energetic, responsible, professional, hardworking, and diligent person in carrying out assigned tasks. He has deep knowledge in his field and is very organized and presentable in the work environment, and is very meticulous and detail-oriented regarding project performance and progress. Getting to know and collaborating with him will be valuable for any group or company.</p>
                     </div>
                 </div>
             </div>
@@ -382,7 +711,7 @@
                 <div class="contact-content">
                     <p data-en="I'm always interested in hearing about new projects and opportunities. Feel free to reach out!" data-fa="من همیشه علاقه‌مند به شنیدن پروژه‌های جدید و فرصت‌ها هستم. می‌توانی آزادانه تماس بگیری!">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
                     <div class="contact-links">
-                        <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <a href="https://linkedin.com/in/amir-darbandi-72526b25b/" target="_blank" class="contact-link">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
@@ -390,13 +719,9 @@
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="mailto:amir@example.com" class="contact-link">
+                        <a href="mailto:darbandidr99@gmail.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
                             <span data-en="Email" data-fa="ایمیل">Email</span>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" class="contact-link">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
                         </a>
                     </div>
                 </div>
@@ -405,11 +730,11 @@
 
         <footer class="footer">
             <div class="footer-content">
-                <p data-en="&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS" data-fa="&copy; 1405 امیر داربندی. تمام حقوق محفوظ است. | ساخته شده با ❤️ و HTML/CSS/JS خالص">&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS</p>
+                <p data-en="&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS" data-fa="&copy; 1405 امیر دربندی. تمام حقوق محفوظ است. | ساخته شده با ❤️ و HTML/CSS/JS خالص">&copy; 2026 Amir Darbandi. All rights reserved. | Built with ❤️ and Pure HTML/CSS/JS</p>
             </div>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="yscript.js"></script>
 </body>
 </html>
