@@ -132,6 +132,50 @@
         body[dir="rtl"] .testimonial-header {
             flex-direction: row-reverse;
         }
+
+        /* استایل دکمه منوی همبرگری و لیست آن */
+        .mobile-menu-btn {
+            display: none; /* در دسکتاپ مخفی است */
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 5px;
+            transition: var(--transition);
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block; /* در موبایل نمایش داده می‌شود */
+                order: 0;
+            }
+            #navMenu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--background);
+                padding: 20px 0;
+                gap: 20px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                z-index: 99;
+                align-items: center;
+            }
+            #navMenu.active {
+                display: flex;
+            }
+            .controls {
+                margin-left: auto;
+                order: 1;
+            }
+            /* مخفی کردن آیکون کد پس از بارگذاری عکس پروفایل */
+            .hero-avatar .avatar-circle i {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -142,7 +186,11 @@
                     <span class="logo-text">DarbanDev</span>
                 </div>
                 <nav class="nav">
-                    <ul>
+                    <!-- دکمه همبرگری -->
+                    <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul id="navMenu">
                         <li><a href="#about" data-en="About" data-fa="درباره‌ی من">About</a></li>
                         <li><a href="#experience" data-en="Experience" data-fa="تجربه">Experience</a></li>
                         <li><a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a></li>
@@ -441,7 +489,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/ Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
+                            <img src="images/Microsoft_certificate.jpeg" alt="Microsoft Python Certificate">
                         </div>
                     </div>
 
@@ -485,7 +533,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/ IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
+                            <img src="images/IBM_certificate.jpeg" alt="IBM Backend Developer Certificate">
                         </div>
                     </div>
 
@@ -507,7 +555,7 @@
                             </a>
                         </div>
                         <div class="cert-image-wrapper">
-                            <img src="images/ Google_certificate.jpeg" alt="Google Python Certificate">
+                            <img src="images/Google_certificate.jpeg" alt="Google Python Certificate">
                         </div>
                     </div>
 
