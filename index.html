@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amir Darbandi - Software Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ystyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- استایل‌های ضروری برای نمایش صحیح تصاویر و عناصر جدید بدون شکستن استایل اصلی -->
     <style>
@@ -132,50 +132,6 @@
         body[dir="rtl"] .testimonial-header {
             flex-direction: row-reverse;
         }
-
-        /* استایل دکمه منوی همبرگری و لیست آن */
-        .mobile-menu-btn {
-            display: none; /* در دسکتاپ مخفی است */
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            cursor: pointer;
-            padding: 5px;
-            transition: var(--transition);
-        }
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block; /* در موبایل نمایش داده می‌شود */
-                order: 0;
-            }
-            #navMenu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: var(--background);
-                padding: 20px 0;
-                gap: 20px;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                border-bottom: 1px solid var(--border);
-                box-shadow: var(--shadow);
-                z-index: 99;
-                align-items: center;
-            }
-            #navMenu.active {
-                display: flex;
-            }
-            .controls {
-                margin-left: auto;
-                order: 1;
-            }
-            /* مخفی کردن آیکون کد پس از بارگذاری عکس پروفایل */
-            .hero-avatar .avatar-circle i {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -186,11 +142,7 @@
                     <span class="logo-text">DarbanDev</span>
                 </div>
                 <nav class="nav">
-                    <!-- دکمه همبرگری -->
-                    <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul id="navMenu">
+                    <ul>
                         <li><a href="#about" data-en="About" data-fa="درباره‌ی من">About</a></li>
                         <li><a href="#experience" data-en="Experience" data-fa="تجربه">Experience</a></li>
                         <li><a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a></li>
@@ -783,6 +735,6 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="yscript.js"></script>
 </body>
 </html>
