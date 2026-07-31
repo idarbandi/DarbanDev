@@ -4,11 +4,6 @@ const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
 const bodyElement = document.body;
 
-// Mobile Menu Elements
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navMenu = document.getElementById('navMenu');
-const navLinksArray = document.querySelectorAll('.nav a');
-
 let currentLang = localStorage.getItem('language') || 'en';
 let currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -22,29 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
   applyTheme(currentTheme);
   updateControls();
-});
-
-// Mobile Menu Toggle
-mobileMenuBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  const icon = mobileMenuBtn.querySelector('i');
-  if (navMenu.classList.contains('active')) {
-    icon.classList.remove('fa-bars');
-    icon.classList.add('fa-times');
-  } else {
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-  }
-});
-
-// Close mobile menu when a link is clicked
-navLinksArray.forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-  });
 });
 
 // Language Toggle
@@ -112,18 +84,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Active navigation link on scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('.section');
-  
+  const navLinks = document.querySelectorAll('.nav a');
+
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    // Added a slight offset for better accuracy when header is fixed
-    if (scrollY >= sectionTop - 250) {
+    if (scrollY >= sectionTop - 200) {
       current = section.getAttribute('id');
     }
   });
 
-  navLinksArray.forEach(link => {
+  navLinks.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${current}`) {
       link.classList.add('active');
@@ -142,15 +114,24 @@ const observer = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
-      // Stop observing once animated
-      observer.unobserve(entry.target); 
     }
   });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .testimonial-card, .skill-category, .cert-item, .experience-card').forEach(el => {
+document.querySelectorAll('.project-card, .testimonial-card, .skill-category, .cert-item').forEach(el => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
+});
+
+// Contact form functionality (optional - can be enhanced)
+const contactLinks = document.querySelectorAll('.contact-link');
+contactLinks.forEach(link => {
+  link.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-5px) scale(1.05)';
+  });
+  link.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+  });
 });
